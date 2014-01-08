@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript"  src="js/jquery.js"></script>
+  <title>Calc</title>
+	
+  <script type="text/javascript">
+  
+	function zamijeni(broj){
+			var vrijednost=$('#test').val();
+			vrijednost+=broj;
+			$('#test').val(vrijednost);	
+	}
+	function send_nacl(value,operand){
+		  Calculator = document.getElementById('hello_tutorial');
+		  Calculator.postMessage(operand.toString());
+		  Calculator.postMessage(value.toString());
+	}
+	
+    $( document ).ready(function() {
+		$('#1').click(function(){
+			zamijeni(1);
+		});
+		$('#2').click(function(){
+			zamijeni(2);		
+		});
+		$('#3').click(function(){
+			zamijeni(3);		
+		});
+		$('#4').click(function(){
+			zamijeni(4);		
+		});
+		$('#5').click(function(){
+			zamijeni(5);		
+		});
+		$('#6').click(function(){
+			zamijeni(6);		
+		});
+		$('#7').click(function(){
+			zamijeni(7);		
+		});
+		$('#8').click(function(){
+			zamijeni(8);		
+		});
+		$('#9').click(function(){
+			zamijeni(9);		
+		});
+		$('#0').click(function(){
+			zamijeni(0);		
+		});  
+		$('#C').click(function(){
+			$('#test').val('');	
+		});
+		$('#btn_plus').click(function(){
+			zamijeni('+');
+		});
+		$('#btn_minus').click(function(){
+			zamijeni('-');
+		});
+		$('#btn_jednako').click(function(){
+			  Calculator = document.getElementById('hello_tutorial');
+			  Calculator.postMessage($('#test').val());
+		});
+		$('#btn_puta').click(function(){
+			zamijeni('*');
+		});
+	});
+	
+    function handleMessage(message_event) {
+		$('#test').val(message_event.data);
+    }
+
+  </script>
+</head>
+<body>
+
+<h1 class='red'>SIMPLE</h1><h1> GOOGLE NATIVE CLIENT CALCULATOR</h1>
+<hr>
+<center>
+<div id='calculator'>
+	<table>
+	
+		<tr></tr>
+		
+		<tr>
+		<td colspan='3'><input type='text' disabled id='test'/></td>
+		</tr>
+		<tr></tr>
+		<tr>
+
+		</tr>
+		<tr>
+		<td><input type='button' id='7' value='7'/></td>
+		<td><input type='button' id='8' value='8'/></td>
+		<td><input type='button' id='9' value='9'/></td>
+		<td><input type='button' id='C' value='C'/></td>
+		</tr>
+		
+		<tr>
+		<td><input type='button' id='4' value='4'/></td>
+		<td><input type='button' id='5' value='5'/></td>
+		<td><input type='button' id='6' value='6'/></td>
+		<td><input type='button' id='btn_plus' value='+'/></td>
+		</tr>
+		
+		<tr>
+		<td><input type='button' id='1' value='1'/></td>
+		<td><input type='button' id='2' value='2'/></td>
+		<td><input type='button' id='3' value='3'/></td>
+		<td><input type='button' id='btn_minus' value='-'/></td>
+		</tr>
+		
+		<tr>
+		<td  colspan='2'><input class='nula' type='button' id='0' value='0'/></td>
+		<td><input type='button' id='btn_jednako' value='='/></td>
+		<td><input type='button' id='btn_puta' value='*'/></td>
+		</tr>
+		
+		</table>
+</div>
+</center>
+<p>
+  <div id="listener">
+    <script type="text/javascript">
+      var listener = document.getElementById('listener');
+      listener.addEventListener('message', handleMessage, true);
+    </script>
+
+    <embed name="nacl_module"
+       id="hello_tutorial"
+       width=0 height=0
+       src="hello_tutorial.nmf"
+       type="application/x-nacl" />
+  </div>
+</p>
+	
+<style>
+.red{
+	color:lightgreen;	
+}
+.nula{
+	width:105%;
+}
+#calculator{
+	margin-top:5%;
+}
+#test{
+	background:white;
+}
+table td input{
+	width:110%;
+	height:140%;
+}
+table{
+	border: solid gray 1px;
+	background-color:lightblue;
+	zoom:2;
+}
+body{
+	background:url(images/BG.jpg) repeat;
+}
+h1 {
+  text-align:center;
+  color:black;
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+}
+</style>
+</body>
+</html>
