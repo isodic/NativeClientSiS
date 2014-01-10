@@ -1,3 +1,8 @@
+//String parser DOWNLOADED FROM http://stackoverflow.com/questions/17073979/string-calculator-substr
+//String parser includes enum, numberValue and expressionValue functions
+//POSTED BY Nick http://stackoverflow.com/users/1193285/nick
+//EDITED BY greatwolf http://stackoverflow.com/users/234175/greatwolf
+
 #include <cstdio>
 #include <string>
 #include "ppapi/cpp/instance.h"
